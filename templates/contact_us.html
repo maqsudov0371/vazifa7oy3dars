@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Us</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Education" />
+    <meta name="keywords" content="Education" />
+    <meta name="author" content="" />
+    <meta name="MobileOptimized" content="320" />
+    <!-- Template style -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fonts.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nice-select.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/settings.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/book.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/swiper.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/venobox.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/testimonial.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flaticon.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.default.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/fevicon.png' %}" />
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status">
+            <img src="{% static 'images/preloader.gif' %}" id="preloader_image" alt="loader">
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact_section float_left">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="edu_heading_wrapper edu_heading_wrapper_contactus float_left">
+                        <h3>Contact Us</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor, libero non interdum maximus, ligula nulla pretium ligula, a egestas ex nibh.</p>
+                    </div>
+                </div>
+                <div class="col-lg-10 offset-lg-1 col-md-12 col-sm-12 col-12">
+                    <form method="post" action="{% url 'main:contact' %}">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-pos">
+                                    <div class="form-group i-name">
+                                        <input type="text" class="form-control require" name="first_name" required="" placeholder="First Name*">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-pos">
+                                    <div class="form-group i-name">
+                                        <input type="text" class="form-control require" name="last_name" required="" placeholder="Last Name*">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-e">
+                                    <div class="form-group i-email">
+                                        <input type="email" class="form-control require" name="email" required="" placeholder="Email*" data-valid="email" data-error="Email should be valid.">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-s">
+                                    <div class="form-group i-subject">
+                                        <input type="text" class="form-control require" name="subject" required="" placeholder="Subject">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-m">
+                                    <div class="form-group i-message">
+                                        <textarea class="form-control require" name="message" required="" rows="5" id="messageTen" placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="tb_es_btn_div">
+                                    <div class="response">
+                                        {% if messages %}
+                                            <ul class="messages">
+                                                {% for message in messages %}
+                                                    <li class="{{ message.tags }}">{{ message }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </div>
+                                    <div class="tb_es_btn_wrapper conatct_btn2 cont_bnt">
+                                        <button type="submit" class="submitForm">Send Message!</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer Wrapper Start -->
+    <div class="footer jb_cover float_left">
+        <div class="container">
+            <div class="row">
+                <!-- Footer content here -->
+            </div>
+        </div>
+    </div>
+    <div class="edu_footer_bottom float_left">
+        <div class="container">
+            <div class="bottom_footer float_left">
+                <p>&copy;2024 Education. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+    <!-- footer Wrapper End -->
+
+    <!-- Scripts -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/modernizr.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.themepunch.revolution.min.js' %}"></script>
+    <script src="{% static 'js/jquery.themepunch.tools.min.js' %}"></script>
+    <script src="{% static 'js/jquery.countTo.js' %}"></script>
+    <script src="{% static 'js/jquery.inview.min.js' %}"></script>
+    <script src="{% static 'js/swiper.min.js' %}"></script>
+    <script src="{% static 'js/venobox.min.js' %}"></script>
+    <script src="{% static 'js/testimonial.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script src="{% static 'js/jquery.menu-aim.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script>
+        function initMap() {
+            var uluru = { lat: -36.742775, lng: 174.731559 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                scrollwheel: false,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</body>
+
+</html>
